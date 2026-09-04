@@ -21,63 +21,245 @@ section{padding:45px 7%}
 .card{background:#fff;padding:24px;border-radius:18px;text-align:center;box-shadow:0 6px 22px #eadde2}
 .icon{font-size:40px}
 .card p{color:#806872;font-size:14px}
-.price{font-weight:700;color:#b05272}
-.contact{text-align:center}
 footer{text-align:center;padding:25px;background:#382930;color:#fff}
 @media(max-width:650px){h1{font-size:38px}nav{display:none}}
+
+/* --- AMAZON STYLE PRODUCT SECTION --- */
+.amazon-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 280px));
+  gap: 20px;
+  justify-content: center;
+}
+
+.product-card {
+  background: #ffffff;
+  border: 1px solid #e7e7e7;
+  border-radius: 12px;
+  padding: 14px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.product-card:hover {
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  transform: translateY(-3px);
+}
+
+.badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: #cc0c39;
+  color: #fff;
+  font-size: 11px;
+  font-weight: bold;
+  padding: 3px 8px;
+  border-radius: 4px;
+  z-index: 2;
+}
+
+.img-wrapper {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+  background: #fdfdfd;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.img-wrapper img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.product-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.product-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #0f1111;
+  line-height: 1.35;
+  margin: 0 0 6px 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.rating {
+  font-size: 13px;
+  margin-bottom: 6px;
+}
+
+.stars {
+  color: #ffa41c;
+}
+
+.reviews {
+  color: #007185;
+  margin-left: 4px;
+}
+
+.price-section {
+  display: flex;
+  align-items: baseline;
+  gap: 5px;
+}
+
+.discount {
+  color: #cc0c39;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.currency {
+  font-size: 13px;
+  color: #0f1111;
+}
+
+.selling-price {
+  font-size: 22px;
+  font-weight: bold;
+  color: #0f1111;
+}
+
+.mrp-row {
+  font-size: 12px;
+  color: #565959;
+  margin-top: 2px;
+}
+
+.mrp {
+  text-decoration: line-through;
+}
+
+.delivery {
+  font-size: 12px;
+  color: #565959;
+  margin: 8px 0 12px 0;
+}
+
+.buy-btn {
+  background-color: #ffd814;
+  border: 1px solid #fcd200;
+  border-radius: 20px;
+  padding: 9px 0;
+  font-size: 13px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(213,217,217,0.5);
+  transition: background-color 0.2s;
+  width: 100%;
+}
+
+.buy-btn:hover {
+  background-color: #f7ca00;
+}
 </style>
 </head>
 <body>
 
 <header>
-<div>
-<div class="logo">Glow & Grace</div>
-<div class="tag">SKIN & HAIR CARE</div>
-</div>
-<nav>
-<a href="#categories">Categories</a>
-<a href="#products">Products</a>
-<a href="#contact">Contact</a>
-</nav>
+  <div>
+    <div class="logo">Glow & Grace</div>
+    <div class="tag">SKIN & HAIR CARE</div>
+  </div>
+  <nav>
+    <a href="#categories">Categories</a>
+    <a href="#products">Products</a>
+  </nav>
 </header>
 
 <main>
-<section class="hero">
-<h1>Glow Naturally. Shine Gracefully.</h1>
-<p>Beauty essentials for your skin and hair.</p>
-<a class="btn" href="#products">Shop Collection</a>
-</section>
+  <section class="hero">
+    <h1>Glow Naturally. Shine Gracefully.</h1>
+    <p>Beauty essentials for your skin and hair.</p>
+    <a class="btn" href="#products">Shop Collection</a>
+  </section>
 
-<section id="categories">
-<h2 class="title">Shop by Category</h2>
-<div class="grid">
-<div class="card"><div class="icon">🧴</div><h3>Shampoo</h3><p>Hair cleansing essentials.</p></div>
-<div class="card"><div class="icon">💧</div><h3>Conditioner</h3><p>Soft and smooth hair care.</p></div>
-<div class="card"><div class="icon">✨</div><h3>Facial Kits</h3><p>Complete facial-care kits.</p></div>
-<div class="card"><div class="icon">💨</div><h3>Hair Spray</h3><p>Styling and finishing care.</p></div>
-<div class="card"><div class="icon">🔥</div><h3>Hair Styling</h3><p>Tools and styling essentials.</p></div>
-<div class="card"><div class="icon">🌸</div><h3>Skincare</h3><p>Daily beauty-care products.</p></div>
-</div>
-</section>
+  <section id="categories">
+    <h2 class="title">Shop by Category</h2>
+    <div class="grid">
+      <div class="card"><div class="icon">🧴</div><h3>Shampoo</h3><p>Hair cleansing essentials.</p></div>
+      <div class="card"><div class="icon">💧</div><h3>Conditioner</h3><p>Soft and smooth hair care.</p></div>
+      <div class="card"><div class="icon">✨</div><h3>Facial Kits</h3><p>Complete facial-care kits.</p></div>
+    </div>
+  </section>
 
-<section id="products">
-<h2 class="title">Featured Products</h2>
-<div class="grid">
-<div class="card"><h3>Glow Cleanse Shampoo</h3><p>Daily-care shampoo.</p><div class="price">₹499</div></div>
-<div class="card"><h3>Silky Grace Conditioner</h3><p>Smooth-feel conditioner.</p><div class="price">₹449</div></div>
-<div class="card"><h3>Radiance Facial Kit</h3><p>Facial-care kit.</p><div class="price">₹699</div></div>
-<div class="card"><h3>Grace Hold Hair Spray</h3><p>Easy styling finish.</p><div class="price">₹399</div></div>
-</div>
-</section>
+  <!-- AMAZON STYLE PRODUCTS SECTION -->
+  <section id="products">
+    <h2 class="title">Featured Deals & Offers</h2>
+    <div class="amazon-gallery">
 
-<section id="contact" class="contact">
-<h2 class="title">Glow & Grace</h2>
-<p>Orders and enquiries welcome.</p>
-<a class="btn" href="https://wa.me/">WhatsApp Us</a>
-</section>
+      <!-- Product 1 -->
+      <div class="product-card">
+        <span class="badge">Limited Deal</span>
+        <div class="img-wrapper">
+          <img src="1788519410016.jpeg" alt="Radiant Glow Facial Kit">
+        </div>
+        <div class="product-info">
+          <h3 class="product-title">O3+ / Raaga Professional Radiant Glow Facial Kit</h3>
+          <div class="rating">
+            <span class="stars">★★★★☆</span>
+            <span class="reviews">4.3 (1,240)</span>
+          </div>
+          <div class="price-section">
+            <span class="discount">-45%</span>
+            <span class="currency">₹</span>
+            <span class="selling-price">549</span>
+          </div>
+          <div class="mrp-row">
+            M.R.P.: <span class="mrp">₹999</span>
+          </div>
+          <p class="delivery">FREE delivery by <b>Tomorrow</b></p>
+          <button class="buy-btn">Add to Cart</button>
+        </div>
+      </div>
+
+      <!-- Product 2 -->
+      <div class="product-card">
+        <span class="badge">Best Seller</span>
+        <div class="img-wrapper">
+          <img src="https://via.placeholder.com/300" alt="Professional Hair Care">
+        </div>
+        <div class="product-info">
+          <h3 class="product-title">Professional Smooth & Shine Shampoo + Hair Mask Combo</h3>
+          <div class="rating">
+            <span class="stars">★★★★★</span>
+            <span class="reviews">4.7 (890)</span>
+          </div>
+          <div class="price-section">
+            <span class="discount">-30%</span>
+            <span class="currency">₹</span>
+            <span class="selling-price">699</span>
+          </div>
+          <div class="mrp-row">
+            M.R.P.: <span class="mrp">₹999</span>
+          </div>
+          <p class="delivery">FREE delivery by <b>Sunday</b></p>
+          <button class="buy-btn">Add to Cart</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
 </main>
 
-<footer>© 2026 Glow & Grace · Skin & Hair Care</footer>
+<footer>
+  <p>© 2026 Glow & Grace. All rights reserved.</p>
+</footer>
 
 </body>
 </html>
